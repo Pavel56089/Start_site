@@ -1,3 +1,11 @@
 .jumbotron {
 					background-image: url(img/bg.jpg); /* Путь к фоновому изображению */
 			}
+.navbar{
+	margin-bottom:0;
+}
+
+
+ul.nav.navbar-nav {
+	float: right;
+}

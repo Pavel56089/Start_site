@@ -31,14 +31,14 @@ require_once ('include/functions.php');
                         </a>
                     </div>
                     <div class="col-md-9">
-                        <h4><a href="#"><?=$post['title']?></a></h4>
+                        <h4><a href="../post.php?post_id=<?=$post['id']?>"><?=$post['title']?></a></h4>
                         <p>
                             <?=$post['description']?>
                         </p>
-                        <p><a class="btn btn-info btn-sm" href="#">Подробнее</a></p>
+                        <p><a class="btn btn-info btn-sm" href="../post.php?post_id=<?=$post['id']?>">Читать полностью</a></p>
                         <br/>
                         <ul class="list-inline">
-                            <li><i class="glyphicon glyphicon-list"></i> Экскурсии |</li>
+                            <li><i class="glyphicon glyphicon-list"></i> <?=$post['category']?> |</li>
                             <li><i class="glyphicon glyphicon-calendar"></i> Sept 16th, 2012  </li>
                         </ul>
                     </div>

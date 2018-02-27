@@ -8,6 +8,11 @@
 		?>
 	</head>
 	<body>
+<!--    --><?php
+//    ini_set('error_reporting','E_ALL');
+//    ini_set('display_errors','E_ALL');
+//    ini_set('display_startup_errors','E_ALL')
+//    ?>
 		<?php
 		include('modules/header.php');
 		include('modules/banner.php');

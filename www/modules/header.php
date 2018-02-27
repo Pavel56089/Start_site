@@ -7,38 +7,34 @@ require_once ('include/functions.php');
 <head>
     <meta charset="utf-8">
     <meta http-equip="X-UA-Compatible" content="IE-edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bootstrap.min.css" rel="stylesheet">
+    <?php
+    require_once ('boot.php');
+    ?>
 </head>
 <body>
-
-    <nav class="nav navbar-inverse">
-                <div class="container-fluid">
-                    <div class="navbar-header">
-                        <a href="#" class="navbar-brand">
-                            START
-                        </a>
-                    </div>
-
-                    <div>
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Главная</a></li>
-                            <!--<li><a href="#">Мероприятия</a></li>
-                            <li><a href="#">Стажировки</a></li>
-                            <li><a href="#">О нас</a></li>
-                            <li><a href="#">Контакты</a></li>-->
-
-                            <?php
-                            $categories = get_categories();
-
-                            foreach ($categories as $category):?>
-                                <li><a href="category.php?id=<?=$category[id]?>"><?=$category["title"]?></a></li>
-                            <?php endforeach; ?>
-                            ?>
-
-                        </ul>
-                    </div>
-                </div>
-    </nav>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
+                <span class=sr-only>Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                START
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                <li><a href="../index.php">Главная <span class="sr-only">(current)</span></a></li>
+                <li><a href="#">Мероприятия</a></li>
+                <li><a href="#">Стажировки</a></li>
+                <li><a href="#">О нас</a></li>
+                <li><a href="../contacts.php">Контакты</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 </body>
 </html>
