@@ -23,7 +23,7 @@ class IndexController extends Controller
 
     public function show($id){
 
-        $article = Article::select(['id', 'title', 'content'])->where('id',$id)->first();
+        $article = Article::select(['id', 'title', 'content', 'img'])->where('id',$id)->first();
 
         return view('article-content')->with(['article' => $article]);
     }

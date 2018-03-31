@@ -1,0 +1,11 @@
+/*Страница событий*/
+
+.even:hover{
+    color: green;
+    text-decoration: none;
+}
+.even{
+    font-family: 'Arial Black', Times, sans-serif;
+    font-size: larger;
+    color: #1b1e21;
+}

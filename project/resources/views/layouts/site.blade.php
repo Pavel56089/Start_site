@@ -5,7 +5,7 @@
         <title>Start</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <!-- Дополнение к теме -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
@@ -13,6 +13,11 @@
         <style>
             .navbar-collapse{
                 justify-content: flex-end;
+            }
+
+            .even:hover{
+                color: green;
+                text-decoration: none;
             }
         </style>
     </head>
@@ -28,7 +33,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="http://start-hse.loc/public/">
+                <a class="navbar-brand" href="http://start-hse.ru/">
                     START
                 </a>
             </div>
@@ -36,9 +41,9 @@
                 <ul class="nav navbar-nav">
                     <li><a href="http://start-hse.ru">Главная <span class="sr-only">(current)</span></a></li>
                     <li><a href="http://start-hse.ru/events">Мероприятия</a></li>
-                    <li><a href="http://start-hse.ru/internships">Стажировки</a></li>
+                    <li><a href="">Стажировки</a></li>
                     <li><a href="http://start-hse.ru/aboutus">О нас</a></li>
-                    <li><a href="http://start-hse.ru/contacts">Контакты</a></li>
+                    <li><a href="http://start-hse.ru/contact">Контакты</a></li>
                 </ul>
             </div>
         </div>

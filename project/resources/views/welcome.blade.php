@@ -16,7 +16,7 @@
                     <div class="carousel-caption">
                         <h3>START</h3>
                         <p>проект профориентации, стажировок и развития профессиональных навыков лицеистов.</p>
-                        <button class="btn btn-primary btn-lg">Подробнее</button>
+                        <a href="/aboutus" class="btn btn-primary btn-lg">Подробнее</a>
                     </div>
                 </div>
                 <!-- Слайд №2 -->
@@ -57,12 +57,12 @@
                 @foreach ($articles as $article)
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="#" class="thumbnail">
+                        <a href="{{ route ('articleShow',['id'=>$article->id]) }}" class="thumbnail">
                             <img src="{{$article->img}}" alt="">
                         </a>
                     </div>
                     <div class="col-md-9">
-                        <h4><a href=""></a>{{$article->title}}</h4>
+                        <h4><a href="{{ route ('articleShow',['id'=>$article->id]) }}">{{$article->title}}</a></h4>
                         <p>
                             {{$article->desc}}
                         </p>

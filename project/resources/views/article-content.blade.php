@@ -17,6 +17,8 @@
                     <div class="page-header">
                         <h3>{{ $article->title }}</h3>
                     </div>
+
+                    <img src="{{$article->img }}" alt="Здесь должна быть картинка" width="700px" align="center"><br><br>
                     {!!$article->content  !!}
                 </div>
                 <div class="col-md-3">

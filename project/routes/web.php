@@ -18,10 +18,17 @@ Route::get('aboutus', function () {
 
 Route::get('/', 'IndexController@index');
 
-Route::get('contacts', 'PageController@contactpage');
-Route::post('contacts', 'PageController@store')->name('messageStore');
 
-Route::get('events', 'PageController@eventspage');
+//По видеоуроку
+Route::get('contact',[
+    'uses'=> 'ContactMessageController@create'
+]);
+Route::post('contact',[
+    'uses' => 'ContactMessageController@store',
+    'as' => 'contact.store'
+]);
+
+Route::get('events', 'EventController@eventspage');
 
 
 
