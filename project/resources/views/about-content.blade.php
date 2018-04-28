@@ -18,23 +18,23 @@
                         <!-- Слайды карусели -->
                         <div class="carousel-inner">
                             <div class="active item">
-                                <img src="{{asset('images/aboutus/slide1.jpg')}}" alt="" class="slide">
+                                <img src="{{asset('storage/aboutus/slide1.jpg')}}" alt="" class="slide">
                             </div>
 
                             <div class="item">
-                                <img src="{{asset('images/aboutus/slide2.jpg')}}" alt="" class="slide">
+                                <img src="{{asset('storage/aboutus/slide2.jpg')}}" alt="" class="slide">
                             </div>
 
                             <div class="item">
-                                <img src="{{asset('images/aboutus/slide3.jpg')}}" alt="" class="slide">
+                                <img src="{{asset('storage/aboutus/slide3.jpg')}}" alt="" class="slide">
                             </div>
 
                             <div class="item">
-                                <img src="{{asset('images/aboutus/slide4.jpg')}}" alt="" class="slide">
+                                <img src="{{asset('storage/aboutus/slide4.jpg')}}" alt="" class="slide">
                             </div>
 
                             <div class="item">
-                                <img src="{{asset('images/aboutus/slide5.jpg')}}" alt="" class="slide">
+                                <img src="{{asset('storage/aboutus/slide5.jpg')}}" alt="" class="slide">
                             </div>
 
                         </div>

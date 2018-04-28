@@ -57,7 +57,7 @@
                 <hr>
 
                 <div class="row">
-                    <div class="col-md-7">
+                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
                         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad14ec2931e33fb30242ed663f4679aa0a6e7b5e088cb2213944b73c133f8860d&amp;width=650&amp;height=320&amp;lang=ru_RU&amp;scroll=true"></script>
                     </div>
 

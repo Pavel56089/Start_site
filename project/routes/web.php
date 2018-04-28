@@ -11,13 +11,12 @@
 |
 */
 
+Route::get('/', 'IndexController@index');
+
+
 Route::get('aboutus', function () {
     return view('about-content');
 });
-
-
-Route::get('/', 'IndexController@index');
-
 
 //По видеоуроку
 Route::get('contact',[
@@ -31,8 +30,11 @@ Route::post('contact',[
 Route::get('events', 'EventController@eventspage');
 
 
-
 Route::get('article/{id}', 'IndexController@show')->name('articleShow');
+Route::get('event/{id}', 'EventController@show')->name('eventShow');
 Route::auth();
 
-Route::get('/home', 'HomeController@index');
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

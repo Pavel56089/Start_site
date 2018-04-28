@@ -16,5 +16,12 @@ class EventController extends Controller
         return view('events-content')->with(['events'=> $events]);
     }
 
+    public function show($id){
+
+        $event = Event::select(['id', 'title', 'desc','img','datetime','status'])->where('id',$id)->first();
+
+        return view('event-content')->with(['event' => $event]);
+    }
+
     //
 }

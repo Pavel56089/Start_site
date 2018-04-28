@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Article;
+use App\Post;
 
 
 class IndexController extends Controller
@@ -14,18 +14,18 @@ class IndexController extends Controller
     //
     public function index(){
 
-        $articles = Article::select(['id', 'title', 'desc','img','date','category'])->get();
+        $posts = Post::select(['id', 'title', 'excerpt','image'])->get();
 
-        return view('welcome')->with(['articles'=> $articles]);
+        return view('welcom')->with(['posts'=> $posts]);
     }
 
 
 
     public function show($id){
 
-        $article = Article::select(['id', 'title', 'content', 'img'])->where('id',$id)->first();
+        $post = Post::select(['id', 'title', 'body', 'image','excerpt'])->where('id',$id)->first();
 
-        return view('article-content')->with(['article' => $article]);
+        return view('article-content')->with(['post' => $post]);
     }
 
 }

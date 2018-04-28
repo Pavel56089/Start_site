@@ -10,16 +10,21 @@
 
 @section('content')
 
-    @if($article)
+    @if($post)
         <div class="container">
             <div class="row">
+                <div class="jumbotron" >
+                    <h1 align="center">{{ $post->title }}</h1>
+                    <p align="center">{{ $post->excerpt }}</p>
+
+                </div>
                 <div class="col-md-9">
                     <div class="page-header">
-                        <h3>{{ $article->title }}</h3>
+                        <h3>{{ $post->title }}</h3>
                     </div>
 
-                    <img src="{{$article->img }}" alt="Здесь должна быть картинка" width="700px" align="center"><br><br>
-                    {!!$article->content  !!}
+                    <img src="http://start-hse.ru/storage/{{$post->image }}" alt="Здесь должна быть картинка" width="700px" align="center"><br><br>
+                    {!!$post->body  !!}
                 </div>
                 <div class="col-md-3">
                     slidebar
