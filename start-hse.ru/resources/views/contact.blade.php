@@ -71,24 +71,90 @@
                         <form method="POST" action="{{route('contact.store')}}">
                             {{csrf_field()}}
                             <div class="form-group">
-                                <input type="text" class="form-control" name="name" value="" placeholder="Имя">
+                                <input type="text" class="form-control" name="name" value="" placeholder="Имя" required>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" name="email" value="" placeholder="E-mail">
+                                <input type="email" class="form-control" name="email" value="" placeholder="E-mail" required>
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" name="message" rows="5" placeholder="Сообщение"></textarea>
+                                <textarea class="form-control" name="message" rows="5" placeholder="Сообщение" required></textarea>
                             </div>
                             <button class="btn btn-default" type="submit" name="button">
                                 <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Отправить
                             </button>
-                            {{ csrf_field() }}
                         </form>
                     </div>
                 </div>
             </div>
         </section>
     </div>
+<hr>
+    {{--<style>--}}
+        {{--#sendmessage, #senderror {--}}
+            {{--border:1px solid #e6e6e6;--}}
+            {{--background:#f6f6f6;--}}
+            {{--display:none;--}}
+            {{--text-align:center;--}}
+            {{--padding:15px 12px 15px 65px;--}}
+            {{--margin:10px 0;--}}
+            {{--font-weight:600;--}}
+            {{--margin-bottom:30px;--}}
+        {{--}--}}
+
+        {{--#senderror {--}}
+            {{--color: #f00;--}}
+        {{--}--}}
+
+        {{--#senderror span {--}}
+            {{--font-weight: bold;--}}
+        {{--}--}}
+    {{--</style>--}}
+    {{--<div class="col-md-3">--}}
+    {{--<form id="contactform" method="POST" class="validateform">--}}
+        {{--{{ csrf_field() }}--}}
+
+        {{--<div id="sendmessage">--}}
+            {{--Ваше сообщение отправлено!--}}
+        {{--</div>--}}
+        {{--<div id="senderror">--}}
+            {{--При отправке сообщения произошла ошибка. Продублируйте его, пожалуйста, на почту администратора <span>{{ env('MAIL_ADMIN_EMAIL') }}</span>--}}
+        {{--</div>--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-lg-4 field">--}}
+                {{--<input type="text" name="name" placeholder="* Введите ваше имя" required />--}}
+            {{--</div>--}}
+            {{--<div class="col-lg-4 field">--}}
+                {{--<input type="email" name="email" placeholder="* Введите ваш email" required />--}}
+            {{--</div>--}}
+            {{--<div class="col-lg-4 field">--}}
+                {{--<input type="text" name="subject" placeholder="* Введите тему сообщения" required />--}}
+            {{--</div>--}}
+            {{--<div class="col-lg-12 margintop10 field">--}}
+                {{--<textarea rows="12" name="message" class="input-block-level" placeholder="* Ваше сообщение..." required></textarea>--}}
+                {{--<p>--}}
+                    {{--<button class="btn btn-theme margintop10 pull-left" type="submit">Отправить</button>--}}
+                    {{--<span class="pull-right margintop20">* Заполните, пожалуйста, все обязательные поля!</span>--}}
+                {{--</p>--}}
+            {{--</div>--}}
+        {{--</div>--}}
+    {{--</form>--}}
+    {{--</div>--}}
+    {{--<script>--}}
+        {{--$(document).ready(function(){--}}
+            {{--$('#contactform').on('submit', function(e){--}}
+                {{--e.preventDefault();--}}
+
+                {{--$.ajax({--}}
+                    {{--type: 'POST',--}}
+                    {{--url: '/sendmail',--}}
+                    {{--data: $('#contactform').serialize(),--}}
+                    {{--success: function(result){--}}
+                        {{--console.log(result);--}}
+                    {{--}--}}
+                {{--});--}}
+            {{--});--}}
+        {{--});--}}
+    {{--</script>--}}
 
 
 @endsection

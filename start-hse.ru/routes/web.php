@@ -18,6 +18,10 @@ Route::get('aboutus', function () {
     return view('about-content');
 });
 
+Route::get('page', function () {
+    return view('page');
+});
+
 //По видеоуроку
 Route::get('contact',[
     'uses'=> 'ContactMessageController@create'
@@ -29,6 +33,7 @@ Route::post('contact',[
 
 Route::get('events', 'EventController@eventspage');
 
+Route::post('/sendmail', 'Ajax\ContactController@send');
 
 Route::get('article/{id}', 'IndexController@show')->name('articleShow');
 Route::get('event/{id}', 'EventController@show')->name('eventShow');
