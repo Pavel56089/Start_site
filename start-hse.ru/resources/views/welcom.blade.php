@@ -1,8 +1,8 @@
 @extends('layouts.site')
 
 @section('content')
-    <div class="container col-xs-12 col-sm-12 ">
-        <div id="myCarousel" class="carousel slide" data-interval="3000" data-ride="carousel">
+    <div class="">
+        <div id="myCarousel" class="carousel slide" data-interval="4000" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -14,26 +14,26 @@
                 <div class="active item">
                     <img src="{{asset('storage/bg/avito.jpg')}}" alt="" class="slide">
                     <div class="carousel-caption">
-                        <h3>START</h3>
-                        <p>проект профориентации, стажировок и развития профессиональных навыков лицеистов.</p>
-                        <a href="/aboutus" class="btn btn-primary btn-lg">Подробнее</a>
+                        <h3 class="hidden-xs hidden-sm">START</h3>
+                        <p >проект профориентации, стажировок и развития профессиональных навыков лицеистов.</p>
+                        <a href="/aboutus" class="btn btn-primary btn-lg hidden-xs hidden-sm">Подробнее</a>
                     </div>
                 </div>
                 <!-- Слайд №2 -->
                 <div class="item">
                     <img src="{{asset('storage/bg/st-bg.jpg')}}" alt="" class="slide">
                     <div class="carousel-caption">
-                        <h3>Стажировки are coming</h3>
-                        <p>Следите за обновлениями на сайте и в группе ВК</p>
+                        <h3 class="hidden-xs hidden-sm">Открыт набор в проект</h3>
+                        <p>Информацию о нем ищите на сайте и в группе ВК</p>
                     </div>
                 </div>
                 <!-- Слайд №3 -->
                 <div class="item">
                     <img src="{{asset('storage/bg/bug_bg.jpg')}}" alt="" class="slide">
                     <div class="carousel-caption">
-                        <h3 class="text-dark">Внимание!</h3>
-                        <p class="text-dark">Сайт работает в тестовом режиме. Вы можете сообщить о багах и проблемах.</p>
-                        <button class="btn btn-primary btn-lg btn-danger" data-toggle="modal" data-target="#erModal">Сообщить</button>
+                        <h3 class="hidden-xs hidden-sm">Внимание!</h3>
+                        <p >Сайт работает в тестовом режиме. Вы можете сообщить о багах и проблемах.</p>
+                        <button class="btn btn-primary btn-lg btn-danger hidden-xs hidden-sm" data-toggle="modal" data-target="#erModal">Сообщить</button>
                     </div>
                 </div>
             </div>
@@ -52,21 +52,21 @@
         <div class="row">
             <div class="col-md-9">
                 <div class="page-header">
-                    <h3>Последние новости:</h3>
+                    <h3>Последние новости</h3>
                 </div>
                 @foreach ($posts as $post)
                 <div class="row">
                     <div class="col-md-3">
-                        <a href="{{ route ('articleShow',['id'=>$post->id]) }}" class="thumbnail">
+                        <a href="/{{ $post->slug }}" class="thumbnail">
                             <img src="http://start-hse.ru/storage/{{$post->image}}" alt="">
                         </a>
                     </div>
                     <div class="col-md-9">
-                        <h4><a href="{{ route ('articleShow',['id'=>$post->id]) }}">{{$post->title}}</a></h4>
+                        <h4><a href="/{{ $post->slug }}">{{$post->title}}</a></h4>
                         <p>
                             {{$post->excerpt}}
                         </p>
-                        <p><a class="btn btn-info btn-sm" href="{{ route ('articleShow',['id'=>$post->id]) }}">Подробнее</a></p>
+                        <p><a class="btn btn-info btn-sm" href="/{{ $post->slug }}">Подробнее</a></p>
                         <br/>
                         {{--<ul class="list-inline">--}}
                             {{--<li><i class="glyphicon glyphicon-list"></i> {{$article->category}} |</li>--}}
@@ -76,9 +76,26 @@
                 </div>
                 <hr>
                 @endforeach
+                
+                <h4><a href="posts">Все новости</a></h4>
             </div>
             <div class="col-md-3">
-                slidebar
+                <!--Сайдбар-->
+                
+                <br>
+                
+                <script type="text/javascript" async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="37187" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
+                <!--VK-->
+                <script type="text/javascript" src="//vk.com/js/api/openapi.js?154"></script>
+
+                <!-- VK Widget -->
+                
+                <div id="vk_groups" class="container"></div>
+                <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", {mode: 3}, 78826729);
+                </script>
+                <br>
+                
             </div>
         </div>
     </div>

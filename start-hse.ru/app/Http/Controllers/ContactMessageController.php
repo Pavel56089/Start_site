@@ -23,7 +23,7 @@ class ContactMessageController extends Controller
             'nm' => $request->name,
         ], function($mail) use($request){
             $mail->from($request->email, $request->name);
-            $mail->to('john@example.com')->subject('Contact Message');
+            $mail->to('pavel5609s@gmail.com')->subject('Contact Message');
         });
         return redirect()->back()->with('flash_message','Спасибо за ваше обращение!');
     }

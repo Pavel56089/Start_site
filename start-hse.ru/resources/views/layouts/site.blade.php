@@ -1,31 +1,31 @@
 <!DOCTYPE HTML>
     <html>
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-123043987-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-123043987-1');
+        </script>
+
         <meta http-equiv="Content-type" content="text/html; charset=UTF-8"/ >
-        <title>Start</title>
+        <title>{{setting('site.title')}}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-        <link rel="stylesheet" href="{{asset('css/main.css')}}">
         <link rel="shortcut icon" href="{{asset('favicon.ico')}}" type="image/x-icon">
         <!-- Дополнение к теме -->
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-        {{--<link rel="stylesheet" type="text/css" href="{{asset('css\main.css')}}" >--}}
-        <style>
-            .navbar-collapse{
-                justify-content: flex-end;
-            }
-
-            .even:hover{
-                color: green;
-                text-decoration: none;
-            }
-        </style>
+        <link rel="stylesheet" type="text/css" href="{{asset('css\main.css')}}">
+        
     </head>
     <body>
 
     {{--Навигационная панель--}}
-    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-main" aria-expanded="false">
@@ -47,7 +47,7 @@
                 </ul>
             </div>
         </div>
-    </nav><br><br>
+    </nav>
     @if(count($errors) > 0)
         <div class="alert alert-danger">
             @foreach($errors->all() as $error)
@@ -70,6 +70,6 @@
 
     <!-- Последняя компиляция и сжатый JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+    
     </body>
 

@@ -14,16 +14,23 @@ class IndexController extends Controller
     //
     public function index(){
 
-        $posts = Post::select(['id', 'title', 'excerpt','image'])->get();
+        $posts = Post::select(['slug', 'title', 'excerpt','image'])->orderBy('created_at','desc')->paginate(3);;
 
         return view('welcom')->with(['posts'=> $posts]);
+    }
+    
+    public function posts(){
+
+        $posts = Post::select(['slug', 'title', 'excerpt','image'])->orderBy('created_at','desc')->paginate(5);
+
+        return view('posts')->with(['posts'=> $posts]);
     }
 
 
 
-    public function show($id){
+    public function show($slug){
 
-        $post = Post::select(['id', 'title', 'body', 'image','excerpt'])->where('id',$id)->first();
+        $post = Post::select(['slug', 'title', 'body', 'image','excerpt'])->where('slug',$slug)->firstOrFail();
 
         return view('article-content')->with(['post' => $post]);
     }
