@@ -9,38 +9,31 @@
                 </div>
                 <div class="row">
                 @foreach ($events as $event)
-                    {{--<div class="row">--}}
-                        {{--<div class="col-md-3">--}}
-                            {{--<a href="{{ route ('eventShow',['id'=>$event->id]) }}" class="thumbnail">--}}
-                                {{--<img src="{{$event->img}}" alt="">--}}
-                            {{--</a>--}}
-                        {{--</div>--}}
-                        {{--<div class="col-md-9">--}}
-                            {{--<h4><a href="{{ route ('eventShow',['id'=>$event->id]) }}" class="even">{{$event->title}}</a></h4>--}}
-                            {{--<p>--}}
-                                {{--{{$event->desc}}--}}
-                            {{--</p>--}}
-                            {{--<p><a class="btn btn-info btn-sm" href="{{ route ('eventShow',['id'=>$event->id]) }}">Читать полностью</a></p>--}}
-                            {{--<br/>--}}
-                            {{--<ul class="list-inline">--}}
-                                {{--<li><i class="glyphicon glyphicon-list"></i> {{$event->status}} |</li>--}}
-                                {{--<li><i class="glyphicon glyphicon-calendar"></i> {{$event->datetime}}  </li>--}}
-                            {{--</ul>--}}
-                        {{--</div>--}}
-                    {{--</div>--}}
-                    {{--<hr>--}}
+                        <div class="row">
+                            <div class="col-md-3">
+                                <a href="{{ route ('eventShow',['id'=>$event->id]) }}" class="thumbnail">
+                                    <img src="http://start-hse.ru/storage/{{$event->img}}" alt="">
+                                </a>
+                            </div>
+                            <div class="col-md-9">
+                                <h4><a href="{{ route ('eventShow',['id'=>$event->id]) }}">{{$event->title}}</a></h4>
+                                <p>
+                                    {{$event->desc}}
+                                </p>
+                                @if ($event->status === '1')
+                                    <a href="{{ route ('eventShow',['id'=>$event->id]) }}" class="btn btn-sm btn-success">Регистрация открыта</a> Дата и время: {{$event->datetime}}
+                                @elseif ($event->status === '2')
+                                    <a href="{{ route ('eventShow',['id'=>$event->id]) }}" class="btn btn-sm btn-danger">Регистрация закрыта</a> Дата и время: {{$event->datetime}}
+                                @else
+                                    <a href="{{ route ('eventShow',['id'=>$event->id]) }}" class="btn btn-sm btn-danger">Мероприятие прошло</a> Дата и время: {{$event->datetime}}
+                                @endif
+                                <p>
 
-                        <div class="col-sm-6 col-md-4">
-                            <div class="thumbnail">
-                                <img src="http://pro-turizm.com/wp-content/uploads/2013/10/nice-7.jpg" alt="">
-                                <div class="caption">
-                                    <h3>{{$event->title}}</h3>
-                                    <p>{{$event->desc}} , {{$event->status}} , {{$event->datetime}}</p>
-                                    <p><a href="{{ route ('eventShow',['id'=>$event->id]) }}" class="btn btn-primary" role="button">Подробнее</a></p>
-                                </div>
+                                </p>
+                                <br/>
                             </div>
                         </div>
-
+                        <hr>
 
                 @endforeach
 
@@ -51,14 +44,18 @@
             </div>
             <div class="col-md-3">
                 <br>
-                <!--Гугл реклама-->
-                <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-                <script>
-                  (adsbygoogle = window.adsbygoogle || []).push({
-                    google_ad_client: "ca-pub-7120042461991520",
-                    enable_page_level_ads: true
-                  });
+                
+                <script type="text/javascript" async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="37187" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
+                <!--VK-->
+                <script type="text/javascript" src="//vk.com/js/api/openapi.js?154"></script>
+
+                <!-- VK Widget -->
+                
+                <div id="vk_groups" class="container"></div>
+                <script type="text/javascript">
+                VK.Widgets.Group("vk_groups", {mode: 3}, 78826729);
                 </script>
+                <br>
             </div>
         </div>
     </div>

@@ -1,8 +1,26 @@
 @extends('layouts.site')
 
 @section('content')
+    <style>
+        div.item1{
+            background: url({{asset('storage/bg/avito.jpg')}}) 100% 100% no-repeat; /* Добавляем фон */
+        }
+
+        div.item2{
+            background: url({{asset('storage/bg/st-bg.jpg')}}) 100% 100% no-repeat; /* Добавляем фон */
+        }
+
+        div.item3{
+            background: url({{asset('storage/bg/bug_bg.jpg')}}) 100% 100% no-repeat; /* Добавляем фон */
+        }
+        div.item {
+            height: 350px; /* Высота блока */
+            border: 0px solid #000; /* Параметры рамки */
+            background-size: cover; /* Масштабируем фон */
+        }
+    </style>
     <div class="">
-        <div id="myCarousel" class="carousel slide" data-interval="4000" data-ride="carousel">
+        <div id="myCarousel" class="carousel slide" data-interval="5000" data-ride="carousel">
             <ol class="carousel-indicators">
                 <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                 <li data-target="#myCarousel" data-slide-to="1"></li>
@@ -11,29 +29,27 @@
             </ol>
             <!-- Слайды карусели -->
             <div class="carousel-inner">
-                <div class="active item">
-                    <img src="{{asset('storage/bg/avito.jpg')}}" alt="" class="slide">
+                <div class="active item item1">
                     <div class="carousel-caption">
-                        <h3 class="hidden-xs hidden-sm">START</h3>
+                        <h3>START</h3>
                         <p >проект профориентации, стажировок и развития профессиональных навыков лицеистов.</p>
-                        <a href="/aboutus" class="btn btn-primary btn-lg hidden-xs hidden-sm">Подробнее</a>
+                        <a href="{{ url('aboutus') }}" class="btn btn-primary btn-lg">Подробнее</a>
                     </div>
                 </div>
                 <!-- Слайд №2 -->
-                <div class="item">
-                    <img src="{{asset('storage/bg/st-bg.jpg')}}" alt="" class="slide">
+                <div class="item item2">
                     <div class="carousel-caption">
-                        <h3 class="hidden-xs hidden-sm">Открыт набор в проект</h3>
-                        <p>Информацию о нем ищите на сайте и в группе ВК</p>
+                        <h3>Открыт набор в проект</h3>
+                        <p>Приглашаем 10-ые классы вступить в наши ряды</p>
+                        <a class="btn btn-primary btn-lg btn-success" href="https://docs.google.com/forms/d/e/1FAIpQLSf9dGcoB3pO04dxUNPIf_ZpevxsGZAzXIc5h6DtrgHTKJegig/viewform?usp=sf_link">Подать заявку</a>
                     </div>
                 </div>
                 <!-- Слайд №3 -->
-                <div class="item">
-                    <img src="{{asset('storage/bg/bug_bg.jpg')}}" alt="" class="slide">
+                <div class="item item3">
                     <div class="carousel-caption">
-                        <h3 class="hidden-xs hidden-sm">Внимание!</h3>
-                        <p >Сайт работает в тестовом режиме. Вы можете сообщить о багах и проблемах.</p>
-                        <button class="btn btn-primary btn-lg btn-danger hidden-xs hidden-sm" data-toggle="modal" data-target="#erModal">Сообщить</button>
+                        <h3>Открылся сайт</h3>
+                        <p>Если вы нашли ошибку на сайте, напишите нам</p>
+                        <a class="btn btn-primary btn-lg btn-danger" href="{{ url('contact') }}">Нашел</a>
                     </div>
                 </div>
             </div>
@@ -99,30 +115,7 @@
             </div>
         </div>
     </div>
-<div id="erModal" class="modal fade">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="close" data-dismiss="modal">x</button>
-                <h4 class="modal-title">Сообщение о проблеме</h4>
-            </div>
-            <div class="modal-body">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="name" value="" placeholder="Имя">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" name="email" value="" placeholder="E-mail">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" name="message" rows="5" placeholder="Сообщение"></textarea>
-                </div>
-                <button class="btn btn-danger" type="submit" name="button" data-dismiss="modal">
-                    <i class="fa fa-paper-plane-o" aria-hidden="true"></i> Отправить
-                </button>
-            </div>
-        </div>
-    </div>
-</div>
+
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->

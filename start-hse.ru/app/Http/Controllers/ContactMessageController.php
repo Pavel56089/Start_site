@@ -22,8 +22,24 @@ class ContactMessageController extends Controller
             'msg' => $request->message,
             'nm' => $request->name,
         ], function($mail) use($request){
-            $mail->from($request->email, $request->name);
-            $mail->to('pavel5609s@gmail.com')->subject('Contact Message');
+            $mail->from('noreply@start-hse.ru', 'Павел из СТАРТа');
+            $mail->to($request->email)->subject('Ваше обращение');
+        });
+        Mail::send('emails.contact-new',[
+            'msg' => $request->message,
+            'nm' => $request->name,
+            'mail' => $request->email,
+        ], function($mail) use($request){
+            $mail->from('noreply@start-hse.ru', 'Сайт');
+            $mail->to('pbakharuev@start-hse.ru')->subject('Новое обращение');
+        });
+        Mail::send('emails.contact-new',[
+            'msg' => $request->message,
+            'nm' => $request->name,
+            'mail' => $request->email,
+        ], function($mail) use($request){
+            $mail->from('noreply@start-hse.ru', 'Сайт');
+            $mail->to('obogomolov@start-hse.ru')->subject('Новое обращение');
         });
         return redirect()->back()->with('flash_message','Спасибо за ваше обращение!');
     }
