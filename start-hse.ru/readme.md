@@ -1,4 +1,4 @@
-<p align="center"><img src="http://start-hse.ru/storage/bg/avito.jpg"></p>
+<p align="center"><img src="https://pp.userapi.com/c852232/v852232406/14ceea/Q2koJyd5Ipw.jpg"></p>
 
 
 ## About Project start-hse.ru
